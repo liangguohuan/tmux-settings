@@ -1,2 +1,2 @@
 # Tmux Settins
-# put my tmux setings as a plugin
+put my tmux setings as a plugin
