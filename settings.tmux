@@ -4,37 +4,32 @@
 # manual: 
 # - command trigger: c-a [ tmux bind-key command ]
 
-#-- tmux mark for vim --#
-# I use this mark to check vim is working in tmux.
-is_tmux=1
-
-
 #-- base --#
-set -g default-terminal "xterm-256color"
-setw -g xterm-keys on
-set -g display-time 3000
-set -g history-limit 65535
-set -g base-index 1
-set -g pane-base-index 2
-set -s escape-time 0
-set -g focus-events on
+tmux set -g default-terminal "xterm-256color"
+tmux setw -g xterm-keys on
+tmux set -g display-time 3000
+tmux set -g history-limit 65535
+tmux set -g base-index 1
+tmux set -g pane-base-index 2
+tmux set -s escape-time 0
+tmux set -g focus-events on
 
 #-- mouse --#
-set -g mouse-resize-pane on
-set -g mouse-select-pane on
-set -g mouse-select-window on
-set -g mouse-utf8 on
-setw -g mode-mouse on
+tmux set -g mouse-resize-pane on
+tmux set -g mouse-select-pane on
+tmux set -g mouse-select-window on
+tmux set -g mouse-utf8 on
+tmux setw -g mode-mouse on
 
 #-- tmux bind-keykeys --#
-set -g prefix ^a
-untmux bind-key ^b
+tmux set -g prefix ^a
+tmux unbind ^b
 tmux bind-key a send-prefix
 
-untmux bind-key '"'
+tmux unbind '"'
 tmux bind-key - splitw -v
-untmux bind-key %
-tmux bind-key | splitw -h
+tmux unbind %
+tmux bind-key \| splitw -h
 
 tmux bind-key k selectp -U
 tmux bind-key j selectp -D
