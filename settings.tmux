@@ -1,4 +1,4 @@
-#
+#!/usr/bin/env bash
 # author:    liangguohuan <liangguohuan@gmail.com>
 # modified:  2016 Sep 28
 # manual: 
