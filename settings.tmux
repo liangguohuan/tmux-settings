@@ -2,7 +2,7 @@
 # author:    liangguohuan <liangguohuan@gmail.com>
 # modified:  2016 Sep 28
 # manual: 
-# - command trigger: c-a [ bind command ]
+# - command trigger: c-a [ tmux bind-key command ]
 
 #-- tmux mark for vim --#
 # I use this mark to check vim is working in tmux.
@@ -26,39 +26,39 @@ set -g mouse-select-window on
 set -g mouse-utf8 on
 setw -g mode-mouse on
 
-#-- bindkeys --#
+#-- tmux bind-keykeys --#
 set -g prefix ^a
-unbind ^b
-bind a send-prefix
+untmux bind-key ^b
+tmux bind-key a send-prefix
 
-unbind '"'
-bind - splitw -v
-unbind %
-bind | splitw -h
+untmux bind-key '"'
+tmux bind-key - splitw -v
+untmux bind-key %
+tmux bind-key | splitw -h
 
-bind k selectp -U
-bind j selectp -D
-bind h selectp -L
-bind l selectp -R
+tmux bind-key k selectp -U
+tmux bind-key j selectp -D
+tmux bind-key h selectp -L
+tmux bind-key l selectp -R
 
-bind ^k resizep -U 10
-bind ^j resizep -D 10
-bind ^h resizep -L 11
-bind ^l resizep -R 10
+tmux bind-key ^k resizep -U 10
+tmux bind-key ^j resizep -D 10
+tmux bind-key ^h resizep -L 11
+tmux bind-key ^l resizep -R 10
 
-bind -r "<" swap-window -t -1
-bind -r ">" swap-window -t +1
+tmux bind-key -r "<" swap-window -t -1
+tmux bind-key -r ">" swap-window -t +1
 
-bind ^e last
-bind q killp
-bind a displayp
+tmux bind-key ^e last
+tmux bind-key q killp
+tmux bind-key a displayp
 
-bind '~' splitw htop
-bind m command-prompt "splitw -h 'exec man %%'"
+tmux bind-key '~' splitw htop
+tmux bind-key m command-prompt "splitw -h 'exec man %%'"
 
-bind C-c run "tmux save-buffer - | xsel -ib" \; display "Copied tmux buffer to system clipboard"
-bind C-v run "tmux set-buffer \"$(xsel -ob)\"; tmux paste-buffer"
-bind F4 run "tmux kill-server"# }}}
+tmux bind-key C-c run "tmux save-buffer - | xsel -ib" \; display "Copied tmux buffer to system clipboard"
+tmux bind-key C-v run "tmux set-buffer \"$(xsel -ob)\"; tmux paste-buffer"
+tmux bind-key F4 run "tmux kill-server"
 
-bind r source-file ~/.tmux.conf \; display "Reloaded!"
+tmux bind-key r source-file ~/.tmux.conf \; display "Reloaded!"
 
