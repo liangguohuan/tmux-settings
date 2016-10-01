@@ -45,8 +45,8 @@ tmux bind-key -r "<" swap-window -t -1
 tmux bind-key -r ">" swap-window -t +1
 
 tmux bind-key ^e last
-tmux bind-key q killp
-tmux bind-key a displayp
+tmux bind-key x killp
+# tmux bind-key a displayp
 
 tmux bind-key '~' splitw htop
 tmux bind-key m command-prompt "splitw -h 'exec man %%'"
