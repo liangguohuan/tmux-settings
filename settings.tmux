@@ -10,7 +10,7 @@ tmux setw -g xterm-keys on
 tmux set -g display-time 3000
 tmux set -g history-limit 65535
 tmux set -g base-index 1
-tmux set -g pane-base-index 2
+tmux set -g pane-base-index 1
 tmux set -s escape-time 0
 tmux set -g focus-events on
 
