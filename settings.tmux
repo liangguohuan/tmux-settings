@@ -13,6 +13,7 @@ tmux set -g base-index 1
 tmux set -g pane-base-index 1
 tmux set -s escape-time 0
 tmux set -g focus-events on
+tmux set -g status
 
 #-- mouse --#
 tmux set -g mouse-resize-pane on
