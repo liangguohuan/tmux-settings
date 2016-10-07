@@ -50,11 +50,12 @@ tmux bind-key x killp
 tmux bind-key ^b set -g status
 
 tmux bind-key '~' splitw htop
-tmux bind-key m command-prompt "splitw -h 'exec man %%'"
+tmux bind-key m command-prompt "splitw -h 'exec vim -c \"SuperMan %%\"'"
 
 tmux bind-key C-c run "tmux save-buffer - | xsel -ib" \; display "Copied tmux buffer to system clipboard"
 tmux bind-key C-v run "tmux set-buffer \"$(xsel -ob)\"; tmux paste-buffer"
 tmux bind-key F4 run "tmux kill-server"
+tmux bind-key Enter send-keys 'cls' C-m
 
 tmux bind-key r source-file ~/.tmux.conf \; display "Reloaded!"
 
