@@ -14,6 +14,7 @@ tmux set -g pane-base-index 1
 tmux set -s escape-time 0
 tmux set -g focus-events on
 tmux set -g status
+tmux set -g status-position top
 
 #-- mouse --#
 tmux set -g mouse-resize-pane on
@@ -23,7 +24,7 @@ tmux set -g mouse-utf8 on
 tmux setw -g mode-mouse on
 
 #-- tmux bind-keykeys --#
-tmux set -g prefix ^a
+tmux set -g prefix F10
 tmux unbind ^b
 tmux bind-key a send-prefix
 
@@ -32,22 +33,28 @@ tmux bind-key - splitw -v
 tmux unbind %
 tmux bind-key \| splitw -h
 
-tmux bind-key k selectp -U
-tmux bind-key j selectp -D
-tmux bind-key h selectp -L
-tmux bind-key l selectp -R
+tmux bind-key k resizep -U 10
+tmux bind-key j resizep -D 10
+tmux bind-key h resizep -L 10
+tmux bind-key l resizep -R 10
 
-tmux bind-key ^k resizep -U 10
-tmux bind-key ^j resizep -D 10
-tmux bind-key ^h resizep -L 11
-tmux bind-key ^l resizep -R 10
+# switch windows alt+number
+tmux bind-key -n M-1 select-window -t 1
+tmux bind-key -n M-2 select-window -t 2
+tmux bind-key -n M-3 select-window -t 3
+tmux bind-key -n M-4 select-window -t 4
+tmux bind-key -n M-5 select-window -t 5
+tmux bind-key -n M-6 select-window -t 6
+tmux bind-key -n M-7 select-window -t 7
+tmux bind-key -n M-8 select-window -t 8
+tmux bind-key -n M-9 select-window -t 9
 
 tmux bind-key -r "<" swap-window -t -1
 tmux bind-key -r ">" swap-window -t +1
 
-tmux bind-key ^e last
+tmux bind-key e last
 tmux bind-key x killp
-tmux bind-key ^b set -g status
+tmux bind-key b set -g status
 
 tmux bind-key '~' splitw htop
 tmux bind-key m command-prompt "splitw -h 'exec vim -c \"SuperMan %%\"'"
