@@ -58,7 +58,7 @@ tmux bind-key x killp
 tmux bind-key b set -g status
 
 tmux bind-key '~' splitw htop
-tmux bind-key m command-prompt "splitw -h 'exec vim -c \"SuperMan %%\"'"
+tmux bind-key m command-prompt "splitw -p 100 'exec vim -c \"SuperMan %%\"'; resize-pane -Z"
 
 tmux bind-key C-c run "tmux save-buffer - | xsel -ib" \; display "Copied tmux buffer to system clipboard"
 tmux bind-key C-v run "tmux set-buffer \"$(xsel -ob)\"; tmux paste-buffer"
