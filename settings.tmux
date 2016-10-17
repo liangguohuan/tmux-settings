@@ -48,6 +48,7 @@ tmux bind-key -n M-6 select-window -t 6
 tmux bind-key -n M-7 select-window -t 7
 tmux bind-key -n M-8 select-window -t 8
 tmux bind-key -n M-9 select-window -t 9
+tmux bind-key -n M-0 run-shell "tmux select-window -t `tmux list-windows | sed -n '$p' | awk -F ':' '{print $1}'`"
 
 tmux bind-key -r "<" swap-window -t -1
 tmux bind-key -r ">" swap-window -t +1
