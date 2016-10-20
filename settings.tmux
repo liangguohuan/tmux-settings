@@ -24,7 +24,7 @@ tmux set -g mouse-utf8 on
 tmux setw -g mode-mouse on
 
 #-- tmux bind-keykeys --#
-tmux set -g prefix F10
+tmux set -g prefix F6
 tmux unbind ^b
 tmux bind-key a send-prefix
 
