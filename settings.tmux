@@ -47,7 +47,7 @@ tmux bind-key -n M-5 select-window -t 5
 tmux bind-key -n M-6 select-window -t 6
 tmux bind-key -n M-7 select-window -t 7
 tmux bind-key -n M-8 select-window -t 8
-tmux bind-key -n M-9 select-window -t 9
+tmux bind-key -n M-9 select-window -l
 tmux bind-key -n M-0 run-shell "/home/hanson/CodeHub/SHELL/tmux-run-shell lastwindow"
 
 tmux bind-key -r "<" swap-window -t -1
