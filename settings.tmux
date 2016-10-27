@@ -5,8 +5,8 @@
 # - command trigger: c-a [ tmux bind-key command ]
 
 #-- base --#
-tmux set -g default-terminal "xterm-256color"
-tmux set -ga terminal-overrides ",xterm-256color:Tc"
+tmux set -g default-terminal "screen-256color"
+tmux set -ga terminal-overrides ",screen-256color:Tc"
 tmux setw -g xterm-keys on
 tmux set -g display-time 3000
 tmux set -g history-limit 65535
