@@ -6,6 +6,7 @@
 
 #-- base --#
 tmux set -g default-terminal "xterm-256color"
+tmux set -ga terminal-overrides ",xterm-256color:Tc"
 tmux setw -g xterm-keys on
 tmux set -g display-time 3000
 tmux set -g history-limit 65535
