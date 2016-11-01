@@ -64,7 +64,7 @@ tmux bind-key m command-prompt "splitw -p 100 'exec man %%'; resize-pane -Z"
 tmux bind-key C-c run "tmux save-buffer - | xsel -ib" \; display "Copied tmux buffer to system clipboard"
 tmux bind-key C-v run "tmux set-buffer \"$(xsel -ob)\"; tmux paste-buffer"
 tmux bind-key F4 run "tmux kill-server"
-tmux bind-key Enter send-keys 'cls' C-m
+tmux bind-key Enter send-keys "clear && tmux clear-history" C-m
 
 tmux bind-key r source-file ~/.tmux.conf \; display "Reloaded!"
 
