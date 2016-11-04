@@ -56,7 +56,7 @@ tmux bind-key -r ">" swap-window -t +1
 
 tmux bind-key e last
 tmux bind-key x killp
-tmux bind-key b set -g status
+tmux bind-key b set status
 
 tmux bind-key '~' splitw htop
 tmux bind-key m command-prompt "splitw -p 100 'exec man %%'; resize-pane -Z"
