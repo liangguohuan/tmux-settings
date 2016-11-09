@@ -49,7 +49,7 @@ tmux bind-key -n M-6 select-window -t 6
 tmux bind-key -n M-7 select-window -t 7
 tmux bind-key -n M-8 select-window -t 8
 tmux bind-key -n M-9 select-window -l
-tmux bind-key -n M-0 run-shell "/home/hanson/CodeHub/SHELL/tmux-run-shell lastwindow"
+tmux bind-key -n M-0 run-shell "tmux-run-shell lastwindow"
 
 tmux bind-key -r "<" swap-window -t -1
 tmux bind-key -r ">" swap-window -t +1
@@ -58,13 +58,15 @@ tmux bind-key e last
 tmux bind-key x killp
 tmux bind-key b set status
 
-tmux bind-key '~' splitw htop
-tmux bind-key m command-prompt "splitw -p 100 'exec man %%'; resize-pane -Z"
+# replace default window list showing
+tmux bind-key w run 'tmux splitw "tmux-run-shell getwindowlist" \; resizep -Z'
+tmux bind-key H run 'tmux splitw "htop" \; resizep -Z'
+tmux bind-key m command-prompt "splitw -p 100 'exec man %%'; resizep -Z"
 
-tmux bind-key C-c run "tmux save-buffer - | xsel -ib" \; display "Copied tmux buffer to system clipboard"
-tmux bind-key C-v run "tmux set-buffer \"$(xsel -ob)\"; tmux paste-buffer"
-tmux bind-key F4 run "tmux kill-server"
-tmux bind-key Enter send-keys -R "xdotool set_window -name ' ' $(xdotool getactivewindow) && clear && tmux clear-history" C-m
+tmux bind-key C-c run "tmux-run-shell copy" \; display "Copied tmux buffer to system clipboard"
+tmux bind-key C-v run "tmux-run-shell paste"
+tmux bind-key F4  run "tmux kill-server"
+tmux bind-key Enter send-keys -R "tmux-run-shell clear" C-m
 
 tmux bind-key r source-file ~/.tmux.conf \; display "Reloaded!"
 
