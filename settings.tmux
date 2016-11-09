@@ -60,6 +60,9 @@ tmux bind-key b set status
 
 # replace default window list showing
 tmux bind-key w run 'tmux splitw "tmux-run-shell getwindowlist" \; resizep -Z'
+# replace default session list showing
+tmux bind-key s run 'tmux splitw "tmux-run-shell getsessionlist" \; resizep -Z'
+
 tmux bind-key H run 'tmux splitw "htop" \; resizep -Z'
 tmux bind-key m command-prompt "splitw -p 100 'exec man %%'; resizep -Z"
 
