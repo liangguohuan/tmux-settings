@@ -40,16 +40,16 @@ tmux bind-key h resizep -L 10
 tmux bind-key l resizep -R 10
 
 # switch windows alt+number
-tmux bind-key -n M-1 select-window -t 1
-tmux bind-key -n M-2 select-window -t 2
-tmux bind-key -n M-3 select-window -t 3
-tmux bind-key -n M-4 select-window -t 4
-tmux bind-key -n M-5 select-window -t 5
-tmux bind-key -n M-6 select-window -t 6
-tmux bind-key -n M-7 select-window -t 7
-tmux bind-key -n M-8 select-window -t 8
-tmux bind-key -n M-9 select-window -l
-tmux bind-key -n M-0 run-shell "tmux-run-shell lastwindow"
+tmux bind-key -n C-1 select-window -t 1
+tmux bind-key -n C-2 select-window -t 2
+tmux bind-key -n C-3 select-window -t 3
+tmux bind-key -n C-4 select-window -t 4
+tmux bind-key -n C-5 select-window -t 5
+tmux bind-key -n C-6 select-window -t 6
+tmux bind-key -n C-7 select-window -t 7
+tmux bind-key -n C-8 select-window -t 8
+tmux bind-key -n C-9 select-window -l
+tmux bind-key -n C-0 run-shell "tmux-run-shell lastwindow"
 
 tmux bind-key -r "<" swap-window -t -1
 tmux bind-key -r ">" swap-window -t +1
@@ -64,12 +64,12 @@ tmux bind-key w run 'tmux splitw "tmux-run-shell getwindowlist" \; resizep -Z'
 tmux bind-key s run 'tmux splitw "tmux-run-shell getsessionlist" \; resizep -Z'
 
 tmux bind-key H run 'tmux splitw "htop" \; resizep -Z'
-tmux bind-key m command-prompt "splitw -p 100 'exec man %%'; resizep -Z"
+tmux bind-key M command-prompt "splitw -p 100 'exec vman %%'; resizep -Z"
 
 tmux bind-key C-c run "tmux-run-shell copy" \; display "Copied tmux buffer to system clipboard"
 tmux bind-key C-v run "tmux-run-shell paste"
 tmux bind-key F4  run "tmux kill-server"
-tmux bind-key Enter send-keys -R "tmux-run-shell clear" C-m
+tmux bind-key Enter send-keys -R C-q "tmux-run-shell clear" C-m
 
 tmux bind-key r source-file ~/.tmux.conf \; display "Reloaded!"
 
