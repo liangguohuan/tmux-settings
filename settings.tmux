@@ -57,6 +57,7 @@ tmux bind-key -r ">" swap-window -t +1
 tmux bind-key e last
 tmux bind-key x killp
 tmux bind-key b set status
+tmux bind-key o kill-pane -a
 
 # replace default window list showing
 tmux bind-key w run 'tmux splitw "tmux-run-shell getwindowlist" \; resizep -Z'
