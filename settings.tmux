@@ -59,6 +59,8 @@ tmux bind-key x killp
 tmux bind-key b set status
 tmux bind-key o kill-pane -a
 
+# replace default key list showing
+tmux bind-key ? run 'tmux splitw "tmux-run-shell getkeylist" \; resizep -Z'
 # replace default window list showing
 tmux bind-key w run 'tmux splitw "tmux-run-shell getwindowlist" \; resizep -Z'
 # replace default session list showing
