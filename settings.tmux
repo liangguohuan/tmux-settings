@@ -24,6 +24,11 @@ tmux set -g mouse-select-window on
 tmux set -g mouse-utf8 on
 tmux setw -g mode-mouse on
 
+#-- vi-mode-extends --#
+tmux bind-key -t vi-copy 'v' begin-selection
+tmux bind-key -t vi-copy 'y' copy-selection
+tmux bind-key -t vi-copy ' ' search-forward
+
 #-- tmux bind-keykeys --#
 tmux set -g prefix F6
 tmux unbind ^b
