@@ -30,7 +30,7 @@ tmux bind-key -t vi-copy 'y' copy-selection
 tmux bind-key -t vi-copy ' ' search-forward
 
 #-- tmux bind-keykeys --#
-tmux set -g prefix F6
+tmux set -g prefix F10
 tmux unbind ^b
 tmux bind-key a send-prefix
 
